@@ -110,9 +110,10 @@ export const Draggable: DirectiveOptions = {
 		}
 
 		function touchMove(event: TouchEvent) {
-			const touch = event.touches[event.touches.length - 1]
+			event.preventDefault();
+			const touch = event.touches[event.touches.length - 1];
 			if (touch) {
-				mouseMove(new MouseEvent("mousemove", { clientX: touch.clientX, clientY: touch.clientY }))
+				mouseMove(new MouseEvent("mousemove", { clientX: touch.clientX, clientY: touch.clientY }));
 			}
 		}
 
@@ -197,9 +198,10 @@ export const Draggable: DirectiveOptions = {
 		}
 
 		function touchEnd(event: TouchEvent) {
-			const touch = event.changedTouches[event.changedTouches.length - 1]
+			event.preventDefault();
+			const touch = event.changedTouches[event.changedTouches.length - 1];
 			if (touch) {
-				mouseUp(new MouseEvent('mouseup', { clientX: touch.clientX, clientY: touch.clientY  }))
+				mouseUp(new MouseEvent('mouseup', { clientX: touch.clientX, clientY: touch.clientY  }));
 			}
 		}
 
@@ -215,9 +217,9 @@ export const Draggable: DirectiveOptions = {
 		}
 
 		function touchStart(event: TouchEvent) {
-			const touch = event.changedTouches[event.changedTouches.length - 1]
+			const touch = event.changedTouches[event.changedTouches.length - 1];
 			if (touch) {
-				mouseDown(new MouseEvent('mousedown', { clientX: touch.clientX, clientY: touch.clientY  }))
+				mouseDown(new MouseEvent('mousedown', { clientX: touch.clientX, clientY: touch.clientY  }));
 			}
 		}
 
