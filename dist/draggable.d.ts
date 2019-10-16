@@ -1,4 +1,4 @@
-import Vue, { DirectiveOptions, VNodeDirective } from "vue";
+import Vue, { DirectiveOptions, VNodeDirective } from "../node_modules/vue/dist/vue.esm";
 export declare type HandleType = Vue | HTMLElement;
 export interface Position {
     left: number;
@@ -25,6 +25,7 @@ export interface DraggableValue {
     boundingElement?: HTMLElement;
     boundingRectMargin?: MarginOptions;
     initialPosition?: Position;
+    allowTouch?: boolean;
 }
 export interface DraggableBindings extends VNodeDirective {
     value: DraggableValue;
